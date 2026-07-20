@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TimeTell.com</title>
+        <style>
+            h1 {
+                text-align: center;
+                font-family: 'Courier New', Courier, monospace;
+                color:#2D3436;
+                font-size: 70px;
+                margin-top: 50px;
+            }
+            
+            #clock {
+                text-align: center;
+                font-family: 'Courier New', Courier, monospace;
+                color:#7B3F00;
+                font-size: 100px; 
+                font-weight: bold;
+                margin-top: 20px;
+            }
+
+            #date {
+                text-align: center;
+                font-family: 'Courier New', Courier, monospace;
+                color:#7B3F00;
+                font-size: 50px; 
+                font-weight: bold;
+                margin-top: 40px; 
+            }
+            
+            body {
+                font-family: 'Courier New', Courier, monospace;
+                background-color:#35f465;
+                text-align: center;
+                margin:0;
+            }
+            
+            select {
+                font-family: sans-serif;
+                font-size: 18px;
+                padding: 10px;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+            
+            h3 {
+                margin-top: 20px;
+                margin-bottom: 5px;
+                font-size: 22px;
+            }
+            footer {
+                font-family: 'Courier New', Courier, monospace;
+                background-color:#000602;
+                text-align: center;
+                color: #f9faf9;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 20px;
+            }
+            .footer-bar {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    
+    width: 100%;         
+    padding: 15px 0;    
+    
+    position: fixed;     
+    bottom: 0;           
+    left: 0;              
+}
+        </style>
+    </head>
+    <body>
+        <h1 id="title">Ghadi.com</h1>
+        
+        <p id="clock">Loading time...</p>
+        <p id="date">Loading date...</p>
+        
+        <form>
+            <h3>Change background color:</h3>
+            <select id="bgColorSelect" name="background-color" onchange="changeColor()">
+                <option value="#35f465">Default Green</option>
+                <option value="#E2F0D9">Soft Sage Green</option>
+                <option value="#FAF9F6">Linen White</option>
+                <option value="#E6F2F7">Mist Blue</option>
+                <option value="#FEF9E7">Cream Yellow</option>
+                <option value="#F5EEF8">Lavender Dust</option>
+                <option value="#E0F7FA">Soft Ice Cyan</option>
+                <option value="#FFF0F5">Lavender Blush</option>
+                <option value="#FFD1DC">Pastel Cotton Candy</option>
+                <option value="#FFE4E1">Misty Rose</option>
+                <option value="#F0F8FF">Alice Ice Blue</option>
+                <option value="#E6F2F7">Mist Blue</option>
+                <option value="#E2F0D9">Soft Sage Green</option>
+                <option value="#F4F9F4">Fresh Matcha Milk</option>
+                <option value="#E0F2F1">Cool Mint Breeze</option>
+                <option value="#E0F7FA">Soft Ice Cyan</option>
+                <option value="#F5F5DC">Classic Warm Beige</option>
+
+                <option value="#FEF9E7">Cream Yellow</option>
+                <option value="#FFFDD0">Creamy Vanilla</option>
+                <option value="#FAF9F6">Linen White</option>
+                <option value="#FDF5E6">Old Lace Parchment</option>
+                <option value="#FAEBD7">Antique Ivory</option>
+
+                <option value="#F5F6FA">Sleek App Cloud</option>
+                <option value="#EAE6DF">Concrete Industrial Light</option>
+                <option value="#FFF5EE">Soft Seashell</option>
+                <option value="#F9F9F9">Minimal Studio White</option>
+            </select>
+
+            <h3>Change font style:</h3>
+            <select id="bgfontstyle" name="font-style" onchange="changefontstyle()">
+                <option value="'Courier New', Courier, monospace">Default (Courier)</option>
+                <option value="Arial, Helvetica, sans-serif">Modern (Arial)</option>
+                <option value="'Times New Roman', Times, serif">Classic (Times)</option>
+                <option value="'Brush Script MT', cursive">Handwriting (Brush Script)</option>
+                <option value="'Courier New', Courier, monospace">Default (Courier)</option>
+                <option value="Arial, Helvetica, sans-serif">Modern (Arial)</option>
+                <option value="'Times New Roman', Times, serif">Classic (Times)</option>
+                <option value="'Brush Script MT', cursive">Handwriting (Brush Script)</option>
+                <option value="Impact, Charcoal, sans-serif">Bold (Impact)</option>
+                <option value="'Comic Sans MS', cursive">Fun (Comic Sans)</option>
+    
+                <option value="system-ui, -apple-system, sans-serif">Clean Tech (Segoe UI)</option>
+                <option value="'Trebuchet MS', Helvetica, sans-serif">Futuristic (Trebuchet)</option>
+                <option value="Georgia, serif">Elegant (Georgia)</option>
+                <option value="Verdana, Geneva, sans-serif">Friendly (Verdana)</option>
+                <option value="Garamond, Baskerville, serif">Newspaper (Garamond)</option>
+            </select>
+
+           <h3>Change font color:</h3>
+<select id="bgfontcolor" name="font-color" onchange="changeFontColor()">
+    <option value="#7B3F00">Default Roasted Brown</option>
+    <option value="#3E2723">Deep Espresso Black</option>
+    <option value="#4A0E17">Crimson Burgundy</option>
+    <option value="#5C4033">Dark Chocolate</option>
+
+    <option value="#0B132B">Deep Royal Navy</option>
+    <option value="#1C2331">Midnight Blue-Gray</option>
+    <option value="#311B92">Deep Electric Indigo</option>
+    <option value="#2E1114">Dark Cherry Mocha</option>
+
+    <option value="#14281D">British Racing Green</option>
+    <option value="#1C3124">Deep Forest Moss</option>
+    <option value="#2F4F4F">Dark Slate Gray</option>
+    <option value="#263238">Stormcloud Gunmetal</option>
+
+    <option value="#111111">Pure Carbon Black</option>
+    <option value="#1b1b1b">Charcoal Midnight</option>
+    <option value="#222222">Old School GameBoy Jet</option>
+</select>
+            
+        </form>
+
+        <script type="text/javascript">
+            function showTime() {
+                var currentTime = new Date();
+                document.getElementById('clock').textContent = currentTime.toLocaleTimeString();
+            }
+            
+            function showDate() {
+                var currentDate = new Date();
+                document.getElementById('date').textContent = currentDate.toLocaleDateString();
+            }
+            
+            function changeColor() {
+                var dropdown = document.getElementById('bgColorSelect');
+                var selectedColor = dropdown.value; 
+                document.body.style.backgroundColor = selectedColor; 
+            }
+
+            function changefontstyle() {
+                var fontDropdown = document.getElementById('bgfontstyle');
+                var selectedFont = fontDropdown.value; 
+                
+                document.body.style.fontFamily = selectedFont;
+                document.getElementById('clock').style.fontFamily = selectedFont;
+                document.getElementById('date').style.fontFamily = selectedFont;
+                document.getElementById('footer').style.fontFamily = selectedFont; 
+                document.getElementById('title').style.fontFamily = selectedFont; 
+            }
+
+            function changeFontColor() {
+    var colorDropdown = document.getElementById('bgfontcolor');
+    var selectedColor = colorDropdown.value; 
+    
+    document.body.style.color = selectedColor;
+    document.getElementById('clock').style.color = selectedColor;
+    document.getElementById('date').style.color = selectedColor;
+    document.getElementById('footer').style.color = selectedColor;
+    document.getElementById('title').style.color = selectedColor;
+}
+
+            showTime();
+            showDate();
+            
+            setInterval(function() {
+                showTime();
+                showDate();
+            }, 1000);
+        </script>
+        <footer>
+            By Aahan Sinha 6C &trade; 2026 TimeTell.com<br>
+            Inspired by Nishant Sinha<br><br><br>
+            
+        </footer>
+    </body>
+</html>
